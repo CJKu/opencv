@@ -42,7 +42,6 @@
 
 #include "precomp.hpp"
 #include "opencl_kernels_core.hpp"
-
 #include "bufferpool.impl.hpp"
 
 /****************************************************************************************\
@@ -5411,6 +5410,5 @@ void CvSparseMat::copyToSparseMat(cv::SparseMat& m) const
         cv::copyElem((const uchar*)CV_NODE_VAL(this, n), to, esz);
     }
 }
-
 
 /* End of file. */

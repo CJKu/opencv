@@ -308,6 +308,8 @@ typedef signed char schar;
 
 /* special informative macros for wrapper generators */
 #define CV_EXPORTS_W CV_EXPORTS
+// CJ: use this alias to gather export js APIs.
+#define CV_EXPORTS_JS CV_EXPORTS
 #define CV_EXPORTS_W_SIMPLE CV_EXPORTS
 #define CV_EXPORTS_AS(synonym) CV_EXPORTS
 #define CV_EXPORTS_W_MAP CV_EXPORTS

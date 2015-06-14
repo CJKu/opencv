@@ -719,7 +719,7 @@ Finally, there are STL-style iterators that are smart enough to skip gaps betwee
 The matrix iterators are random-access iterators, so they can be passed to any STL algorithm,
 including std::sort().
 */
-class CV_EXPORTS Mat
+class CV_EXPORTS_JS Mat
 {
 public:
     /**
@@ -728,7 +728,7 @@ public:
     The constructed matrix can further be assigned to another matrix or matrix expression or can be
     allocated with Mat::create . In the former case, the old content is de-referenced.
      */
-    Mat();
+    CV_WRAP Mat();
 
     /** @overload
     @param rows Number of rows in a 2D array.

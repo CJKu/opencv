@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenCV-js demo</title>
+  <!-- css -->
+  <link href="css/jquery-ui-1.9.2.custom.css" rel="stylesheet">
+  <style type="text/css">
+    body {
+      font: 15px/22.5px "Helvetica Neue",HelveticaNeue,Helvetica,Arial,sans-serif;
+      line-height: 10px
+    }
+    h1 {
+      text-align: center;
+    }
+    /* jquery ui css */
+    .ui-button .ui-button-text {
+      font-size: 10px;
+      /*line-height: 50%;*/
+      padding: 1px 5px;
+    }
+    /* Hold image panes */
+    #pane_holder {
+      width: 100wh; 
+      height: auto;
+    }
+    /* Hold canvas, on the left, and control_pane*/
+    .image_pane {
+      background-color: LightGray;
+      display: block;
+      height: 250px;
+      margin: 5px;
+      overflow: hidden;
+      padding: 10px;
+      position: relative; /* Make it relative so that childred of it can be absolutly positioned. */
+      width: 90%;
+      border-radius: 2px;
+    }
+    .left_pane {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      background-color: Gray;
+      width: 400px; 
+      height: calc(100% - 10px);
+    }
+    canvas {
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+    .right_pane {
+      position: absolute;
+      left: 410px;
+      top: 5px;
+      padding: 5px;
+      /*display: inline-block;*/
+      background-color: White;
+      width: calc(100% - 425px); 
+      height: calc(100% - 20px);
+    }
+    .right_pane p {
+      line-height: 50%;
+      text-align: center;
+      font-size:0.8em; 
+    }
+    .right_pane .perf_indicator {
+      position: absolute;
+      right: 10px;
+      bottom: 0px;
+      color: #8AC007;
+    }
+
+    /* jqueru UI slider customization */
+    .ui-slider { margin-top: 5px }
+    .ui-slider-horizontal { height: 0.3em; }
+    .ui-slider .ui-slider-handle {
+      height: 0.8em;
+      width: 0.8em;
+    }
+
+    h1 {
+      border-bottom: 1px solid #EEE;
+      line-height: 50px;
+      font-size: 30px;
+    }
+    #page_icon {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      max-width: 100px;
+      opacity: 0.8;
+    }
+    body > div {
+      border-bottom: 1px solid #EEE;
+      width: 100wh;
+    }
+    select {
+      margin-right: 10px;
+    }
+    #loaded_file {
+      display: inline;
+      color: Blue; 
+      font-size: 10px;
+      margin-left: 5px;
+    }
+  </style>
+
+  <!-- scripts -->
+  <script src="lib/jquery-1.8.3.js"></script>
+  <script src="lib/jquery-ui-1.9.2.custom.min.js"></script>
+  <script type="application/javascript;version=1.8" src="js/base.js"></script>
+  <script type="application/javascript;version=1.8" src="js/opencv_main.js"></script>
+  <script type="application/javascript;version=1.8" src="js/module_threshold.js"></script>
+  <script type="application/javascript;version=1.8" src="js/module_histogram.js"></script>
+  <script type="application/javascript;version=1.8" src="js/module_filter.js"></script>
+  <script type="application/javascript;version=1.8" src="js/module_morphology.js"></script>
+</head>
+<body>
+  <img id="page_icon" src='img/my_god.jpg'/>
+  <h1>OpneCV by Emscripten</h1>
+  <div>
+    <a href="https://github.com/CJKu/opencv">The WIP repository on github</a><br>
+    <p>This page works fine on Firefox for both Mac and Linux version. For unknown reason, it doesn't work on windows.</p>
+  </div>
+  <div>
+    <p>1. Choose an image file</p> 
+    <button id="load_button">Load</button><p id="loaded_file"></p>
+    <input type='file' accept='image/*' id="load_file_input" style="display:none" />
+    <p>2. Select OpenCV modules</p> 
+    <div id="module_selection"></div>
+    <p>3. Go</p>
+    <button id="start_button">Start</button>
+  </div>
+  <div id='pane_holder'></div>
+  <div id='code_snippet' style='display: none;'>
+    <!-- filter -->
+    <div style='display: none;'>
+      <script src="https://gist.github.com/CJKu/56c5be0cec9d704a33cf.js"></script>
+    </div>
+    <!-- histogram -->
+    <div style='display: none;'>
+      <script src="https://gist.github.com/CJKu/6ec2ec8cfc764c615179.js"></script>
+    </div>
+    <!-- threshold -->
+    <div style='display: none;'>
+      <script src="https://gist.github.com/CJKu/e1c07123b8f9911f7726.js"></script>
+    </div>
+    <!-- morphology -->
+    <div style='display: none;'>
+      <script src="https://gist.github.com/CJKu/0152207160b61c9e4a45.js"></script>
+    </div>
+  </div>
+</body>
+</html>
